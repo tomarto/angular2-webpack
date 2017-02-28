@@ -1,1 +1,73 @@
 @import '~bootstrap/scss/bootstrap.scss';
+
+html,
+body {
+	height: 100%;
+}
+
+.background-video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background: url('~assets/images/background.png') no-repeat;
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+.wrap {
+	min-height: 100%;
+}
+
+.wrap > .container {
+	overflow: auto;
+	padding-bottom: 50px;
+}
+
+.white {
+	color: #fff;
+}
+
+.sacramento {
+	font-family: "Sacramento",Arial,serif;
+}
+
+.transparent {
+	background-color: transparent !important;
+}
+
+.footer {
+	position: relative;
+	margin-top: -50px;
+	height: 35px;
+	clear: both;
+	border-top: 1px solid #e5e5e5;
+}
+
+/* Desktop-specific */
+@media screen and (min-width: 768px) {
+	.transparent-md {
+		background-color: transparent !important;
+	}
+}
+
+/* Mobile-specific */
+@media screen and (max-width: 767px) {
+	.wrap > .container {
+		padding-top: 20px;
+	}
+
+	.transparent-xs {
+		background-color: transparent !important;
+	}
+
+	.footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

@@ -1,11 +1,12 @@
-<main>
+<main class="wrap">
     <app-header></app-header>
-    <div class="row">
-        <div class="col-md-8 push-md-2 text-center">
-            <div class="jumbotron">
-                <img alt="Eleganz" class="home-logo" src="assets/images/home/Eleganz.png">
-                <h1>La escencia de tu evento</h1>
-            </div>
-        </div>
+    <div class="container">
+        <router-outlet></router-outlet>
     </div>
 </main>
+
+<div class="footer">
+    <div class="container">
+        <p class="white">&copy; Eleganz.</p>
+    </div>
+</div>

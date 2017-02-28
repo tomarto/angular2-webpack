@@ -3,33 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-/*
- * Platform and Environment providers/directives/pipes
- */
 import { ENV_PROVIDERS } from './environment';
-// App is our top level component
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import '../styles/styles.scss';
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        HomeComponent
     ],
-    imports: [ // import Angular's modules
+    imports: [
         BrowserModule,
+        AppRoutingModule,
         NgbModule.forRoot()
     ],
-    providers: [ // expose our Services and Providers into Angular's dependency injection
+    providers: [
         ENV_PROVIDERS
     ]
 })
-export class AppModule {
-
-}
+export class AppModule { }
