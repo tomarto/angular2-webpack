@@ -85,16 +85,20 @@ module.exports = function (options) {
                 },
 
                 {
-                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                    test: /\.(jpg|png|gif)$/,
                     use: 'file-loader'
                 },
 
                 {
-                    test: /\.(eot|woff2?|svg|ttf)([\?]?.*)$/,
+                    test: /\.(woff2?|ttf|eot|svg)$/,
+                    use: 'url-loader?limit=10000'
+                },
+
+                {
+                    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                     use: 'file-loader'
                 }
-            ],
-
+            ]
         },
 
         plugins: [

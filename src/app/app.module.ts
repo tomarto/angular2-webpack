@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
+import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import '../styles/styles.scss';
         HomeComponent,
         AboutUsComponent,
         ServicesComponent,
+        ContactComponent,
         FooterComponent
     ],
     imports: [
