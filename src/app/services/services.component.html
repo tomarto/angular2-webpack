@@ -1,0 +1,14 @@
+<div class="page-header">
+	<h2>Nuestros Servicios</h2>
+</div>
+<div class="row" *ngFor="let row of rows">
+	<div class="col-sm-12 col-md-6" *ngFor="let service of row.services">
+		<div class="card faded-background">
+			<img class="card-img-top" alt="{{service.name}}" src="{{service.imageUrl}}">
+			<div class="card-block">
+				<h3 class="card-title">{{service.name}}</h3>
+				<p class="card-text">{{service.description}}</p>
+			</div>
+		</div>
+	</div>
+</div>
