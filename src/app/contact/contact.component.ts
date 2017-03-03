@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Contact } from './contact';
-
+import { ContactService } from './contact.service';
 import { CONTACT_VALIDATION } from './contact-validation.constant';
 
 @Component({
@@ -11,10 +11,18 @@ import { CONTACT_VALIDATION } from './contact-validation.constant';
 })
 export class ContactComponent {
     public validation = CONTACT_VALIDATION;
-
     public contact: Contact = new Contact();
+
+    constructor(private contactService: ContactService) { }
 
     public onSubmit() {
         console.log(JSON.stringify(this.contact));
+        this.contactService.sendMessage(this.contact)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
     }
 }
