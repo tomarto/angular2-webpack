@@ -1,0 +1,56 @@
+<div class="col-md-6 col offset-md-3 col-sm-12 mainbox">
+    <div class="card card-info faded-background">
+        <div class="card-header">
+            <div class="card-title">Iniciar Sesión</div>
+            <div class="forgot-password">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="alert alert-danger col-sm-12">
+                <div class="alert alert-error">Usuario y/o contraseña invalidos.</div>
+            </div>
+            <div class="alert alert-success col-sm-12">
+                <div class="alert alert-success">Has cerrado tu sesión.</div>
+            </div>
+            <form id="loginForm" name="loginForm" class="login-form"
+                role="form" action="/" method="post" novalidate="novalidate">
+                <div class="form-group login-form-group">
+                    <label class="sr-only" for="username">Usuario</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-user"></i>
+                        </span>
+                        <input id="username" type="text" class="form-control"
+                            name="username" placeholder="Usuario" required="required" />
+                    </div>
+                </div>
+                <div class="form-group login-form-group">
+                    <label class="sr-only" for="username">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon-lock"></i>
+                        </span>
+                        <input id="password" type="password" class="form-control"
+                            name="password" placeholder="Contraseña"
+                            required="required" />
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="remember" type="checkbox" name="remember"
+                        value="true" /> Recordar sesión
+                    </label>
+                </div>
+                <button id="btn-login" type="submit" class="btn btn-primary">
+                    Iniciar sesión
+                </button>
+                <div class="form-group">
+                    <div class="horizontal-line">
+                        ¿No tienes una cuenta? <a href="#">Registrate aquí</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

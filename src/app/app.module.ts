@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { ContactService } from './contact/contact.service';
@@ -32,6 +33,7 @@ import '../styles/styles.scss';
         AboutUsComponent,
         ServicesComponent,
         ContactComponent,
+        LoginComponent,
         FooterComponent
     ],
     imports: [

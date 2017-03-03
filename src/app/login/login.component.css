@@ -1,0 +1,18 @@
+.mainbox {
+    margin-top: 20px;
+}
+
+.forgot-password {
+    float: right;
+    font-size: 80%;
+    position: relative;
+    top: -10px;
+}
+
+.card-block {
+    padding-top: 30px;
+}
+
+.login-form .login-form-group {
+	margin-bottom: 25px;
+}
