@@ -16,7 +16,6 @@ export class ContactComponent {
     constructor(private contactService: ContactService) { }
 
     public onSubmit() {
-        console.log(JSON.stringify(this.contact));
         this.contactService.sendMessage(this.contact)
                 .then((response) => {
                     console.log(response);

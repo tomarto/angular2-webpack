@@ -7,14 +7,14 @@
             </div>
         </div>
         <div class="card-block">
-            <div class="alert alert-danger col-sm-12">
+            <div class="alert alert-danger col-sm-12" *ngIf="hasError">
                 <div class="alert alert-error">Usuario y/o contraseña invalidos.</div>
             </div>
-            <div class="alert alert-success col-sm-12">
+            <div class="alert alert-success col-sm-12" *ngIf="hasLoggedOut">
                 <div class="alert alert-success">Has cerrado tu sesión.</div>
             </div>
             <form id="loginForm" name="loginForm" class="login-form"
-                role="form" action="/" method="post" novalidate="novalidate">
+                novalidate="novalidate" #loginForm="ngForm" action="/" method="post">
                 <div class="form-group login-form-group">
                     <label class="sr-only" for="username">Usuario</label>
                     <div class="input-group">
@@ -22,7 +22,26 @@
                             <i class="icon-user"></i>
                         </span>
                         <input id="username" type="text" class="form-control"
-                            name="username" placeholder="Usuario" required="required" />
+                            name="username" placeholder="Usuario" required="required"
+                            minlength="{{validation.username.minlength}}"
+                            maxlength="{{validation.username.maxlength}}"
+                            pattern="{{validation.username.pattern}}"
+                            [(ngModel)]="user" #username="ngModel" />
+                    </div>
+                    <div *ngIf="username.errors && (username.dirty || username.touched)"
+                            class="alert alert-danger">
+                        <div [hidden]="!username.errors.required">
+                            {{validation.username.messages.required}}
+                        </div>
+                        <div [hidden]="!username.errors.minlength">
+                            {{validation.username.messages.minlength}}
+                        </div>
+                        <div [hidden]="!username.errors.maxlength">
+                            {{validation.username.messages.maxlength}}
+                        </div>
+                        <div [hidden]="!username.errors.pattern">
+                            {{validation.username.messages.pattern}}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group login-form-group">
@@ -33,7 +52,26 @@
                         </span>
                         <input id="password" type="password" class="form-control"
                             name="password" placeholder="Contraseña"
-                            required="required" />
+                            required="required"
+                            minlength="{{validation.password.minlength}}"
+                            maxlength="{{validation.password.maxlength}}"
+                            pattern="{{validation.password.pattern}}"
+                            [(ngModel)]="pass" #password="ngModel" />
+                    </div>
+                    <div *ngIf="password.errors && (password.dirty || password.touched)"
+                            class="alert alert-danger">
+                        <div [hidden]="!password.errors.required">
+                            {{validation.password.messages.required}}
+                        </div>
+                        <div [hidden]="!password.errors.minlength">
+                            {{validation.password.messages.minlength}}
+                        </div>
+                        <div [hidden]="!password.errors.maxlength">
+                            {{validation.password.messages.maxlength}}
+                        </div>
+                        <div [hidden]="!password.errors.pattern">
+                            {{validation.password.messages.pattern}}
+                        </div>
                     </div>
                 </div>
                 <div class="checkbox">
